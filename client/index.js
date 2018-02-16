@@ -9,7 +9,7 @@ import ApolloClient from 'apollo-client'
 // provides an integration between react and out server side
 import { ApolloProvider } from 'react-apollo'
 
-import App from './App.js'
+import App from './App'
 
 // path: /graphql by default
 const client = new ApolloClient({})
