@@ -12,7 +12,7 @@ class SongCreate extends Component {
   handleInput(event) {
     const { name, value } = event.target
     this.setState({
-      [name]: value
+      [name]: value,
     })
   }
 

@@ -4,8 +4,11 @@ const expressGraphQL = require('express-graphql')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const schema = require('./schema/schema')
+const cors = require('cors')
 
 const app = express()
+
+app.use(cors())
 
 // Replace with your mongoLab URI
 const MONGO_URI = 'mongodb://publicUser:publicPass@ds235388.mlab.com:35388/lyricaldb'
@@ -16,13 +19,13 @@ if (!MONGO_URI) {
 mongoose.Promise = global.Promise
 mongoose.connect(MONGO_URI)
 mongoose.connection
-    .once('open', () => console.log('Connected to MongoLab instance.'))
-    .on('error', error => console.log('Error connecting to MongoLab:', error))
+  .once('open', () => console.log('Connected to MongoLab instance.'))
+  .on('error', (error) => console.log('Error connecting to MongoLab:', error))
 
 app.use(bodyParser.json())
 app.use('/graphql', expressGraphQL({
   schema,
-  graphiql: true
+  graphiql: true,
 }))
 
 const webpackMiddleware = require('webpack-dev-middleware')

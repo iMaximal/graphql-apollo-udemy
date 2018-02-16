@@ -1,16 +1,18 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { withRouter, Switch, Route } from 'react-router-dom'
 import SongList from './components/SongList/SongList'
 import SongCreate from './components/SongCreate/SongCreate'
-// test
-const sd = 's'
-export default () => {
+
+
+const App = () => {
   return (
     <div className="container">
       <Switch>
+        <Route exact path="/" component={SongList} />
         <Route path="/song/new" component={SongCreate} />
-        <Route path="/" exact component={SongList} />
       </Switch>
     </div>
   )
 }
+
+export default withRouter(App)
