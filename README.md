@@ -20,5 +20,6 @@ npm install
 
 ````bash
 npm run dev
-http://localhost:4000/
+npm run start
+http://localhost:3000/
 ````

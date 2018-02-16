@@ -23,7 +23,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
-console.log(client);
 const Root = () => {
   return (
     <ApolloProvider client={client}>

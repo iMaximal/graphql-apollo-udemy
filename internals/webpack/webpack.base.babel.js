@@ -24,7 +24,15 @@ module.exports = (options) => ({
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: options.babelQuery,
+          // options: options.babelQuery,
+          options: {
+            babelrc: false,
+            cacheDirectory: true,
+            presets: ['es2015', 'stage-0', 'react'],
+            plugins: [
+              'transform-runtime',
+            ],
+          },
         },
       },
       {
