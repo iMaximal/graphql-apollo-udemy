@@ -6,6 +6,7 @@ import gql from 'graphql-tag'
 // helper library, glue layer between React and the Apollo data source
 // to help us bond a component with an actual query
 import { graphql } from 'react-apollo'
+import { Link } from 'react-router-dom'
 
 class SongList extends Component {
   renderSongs() {
@@ -22,9 +23,17 @@ class SongList extends Component {
     }
 
     return (
-      <ul className="collection">
-        {this.renderSongs()}
-      </ul>
+      <div>
+        <ul className="collection">
+          {this.renderSongs()}
+        </ul>
+        <Link
+          to="/songs/new"
+          className="btn-floating btn-large red right"
+        >
+          <i className="material-icons">add</i>
+        </Link>
+      </div>
     )
   }
 }

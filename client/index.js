@@ -11,7 +11,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 // provides an integration between react and out server side
 import { ApolloProvider } from 'react-apollo'
 
-import App from './App'
+import App from './containers/App/App'
 
 const link = new HttpLink({ uri: 'http://localhost:4000/graphql' })
 

@@ -2,7 +2,7 @@
 
 Client and server apps.
 
-Technologies: Node.JS, Express-GraphQL, Apollo, Mongoose, React.
+Technologies: Node.JS, Express-GraphQL, Apollo, MongoDB, Mongoose, React.
 
 ## Description
 
