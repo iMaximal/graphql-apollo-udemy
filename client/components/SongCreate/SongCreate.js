@@ -9,7 +9,6 @@ class SongCreate extends Component {
 
     this.state = {
       title: '',
-      error: '',
     }
   }
 
