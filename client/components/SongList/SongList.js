@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 
 // a helper to allow us to write queries inside of a component
-import gql from 'graphql-tag'
+// import gql from 'graphql-tag'
 
 // helper library, glue layer between React and the Apollo data source
 // to help us bond a component with an actual query
 import { graphql } from 'react-apollo'
 import { Link } from 'react-router-dom'
+import query from '../../queries/fetchSongs'
 
 class SongList extends Component {
   renderSongs() {
@@ -37,15 +38,6 @@ class SongList extends Component {
     )
   }
 }
-
-const query = gql`
-  {
-    songs {
-        id
-        title
-    }
-  }
-`
 
 
 export default graphql(query)(SongList)
