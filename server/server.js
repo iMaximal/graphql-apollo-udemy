@@ -11,6 +11,7 @@ const app = express()
 app.use(cors())
 
 // Replace with your mongoLab URI
+// My DB is my DB :-)
 const MONGO_URI = 'mongodb://publicUser:publicPass@ds235388.mlab.com:35388/lyricaldb'
 if (!MONGO_URI) {
   throw new Error('You must provide a MongoLab URI')

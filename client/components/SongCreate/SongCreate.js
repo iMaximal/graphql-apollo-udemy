@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
+import { Link } from 'react-router-dom'
 
 class SongCreate extends Component {
   constructor(props) {
@@ -8,16 +9,20 @@ class SongCreate extends Component {
 
     this.state = {
       title: '',
+      error: '',
     }
   }
 
   onSubmit = (event) => {
     event.preventDefault()
     const { title } = this.state
+
+    // mutation is async func
     this.props.addSong({
       variables: { title },
     })
-    this.setState({ title: '' })
+      .then(() => this.props.history.push('/'))
+      .catch((error) => console.error(error))
   }
 
   handleInput = (event) => {
@@ -30,13 +35,16 @@ class SongCreate extends Component {
   render() {
     return (
       <div>
+        <Link to="/">Back</Link>
         <h3>Create a New Song</h3>
         <form onSubmit={this.onSubmit}>
-          <label>Song Title:</label>
+          <label htmlFor="song-title">Song Title:</label>
           <input
+            id="song-title"
             name="title"
             onChange={this.handleInput}
             value={this.state.title}
+            autoComplete="off"
           />
         </form>
       </div>

@@ -8,8 +8,8 @@
     "url": "https://github.com/iMaximal/graphql-apollo-udemy"
   },
   "scripts": {
-    "dev": "nodemon index.js --ignore client",
-    "start": "cross-env NODE_ENV=development node internals/webpack/server"
+    "dev:server": "nodemon index.js --ignore client",
+    "start:front": "cross-env NODE_ENV=development node internals/webpack/server"
   },
   "author": "Maksim Golitsyn",
   "license": "MIT",
