@@ -1,5 +1,9 @@
 const graphql = require('graphql')
-const { GraphQLObjectType, GraphQLString, GraphQLID } = graphql
+const {
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLID,
+} = graphql
 const mongoose = require('mongoose')
 const Song = mongoose.model('song')
 const Lyric = mongoose.model('lyric')
@@ -39,7 +43,7 @@ const mutation = new GraphQLObjectType({
       type: SongType,
       args: { id: { type: GraphQLID } },
       resolve(parentValue, { id }) {
-        return Song.remove({ _id: id })
+        return Song.findByIdAndRemove(id)
       },
     },
   },
