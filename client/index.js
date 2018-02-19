@@ -10,6 +10,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 
 // provides an integration between react and out server side
 import { ApolloProvider } from 'react-apollo'
+import './style/style.css'
 
 import App from './containers/App/App'
 
