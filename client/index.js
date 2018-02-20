@@ -22,6 +22,9 @@ const client = new ApolloClient({
   //  `/graphql` endpoint on the same host
   link,
   cache: new InMemoryCache(),
+  // takes every piece of data that is fetched by our Apollo client from the back-end
+  // the result of this function or whatever is returned from this function is used to identify that piece of data inside of the Apollo store or inside of the Apollo client
+  dataIdFromObject: o => o.id,
 })
 
 const Root = () => {

@@ -13,7 +13,6 @@ class LyricCreate extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-    const { title } = this.state
 
     // mutation is async func
     this.props.addLyric({
@@ -54,6 +53,7 @@ const ADD_LYRIC = gql`
     addLyricToSong(content: $content, songId: $songId) {
       id
       lyrics {
+        id
         content
       }
     }
