@@ -26,7 +26,7 @@ class SongCreate extends Component {
       .catch((error) => console.error(error))
   }
 
-  handleInput = (event) => {
+  inputHandler = (event) => {
     const { name, value } = event.target
     this.setState({
       [name]: value,
@@ -43,7 +43,7 @@ class SongCreate extends Component {
           <input
             id="song-title"
             name="title"
-            onChange={this.handleInput}
+            onChange={this.inputHandler}
             value={this.state.title}
             autoComplete="off"
           />
