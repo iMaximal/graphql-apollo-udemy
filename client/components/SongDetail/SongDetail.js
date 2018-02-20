@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { graphql } from 'react-apollo'
 import SongIndex from '../../queries/SongIndex'
 
@@ -10,6 +11,7 @@ class SongDetail extends Component {
 
     return (
       <div>
+        <Link to="/">Back</Link>
         <h3>{song.title}</h3>
       </div>
     )

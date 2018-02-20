@@ -20,7 +20,7 @@ class SongCreate extends Component {
     // mutation is async func
     this.props.addSong({
       variables: { title },
-      refetchQueries: [{ fetchSongs }],
+      refetchQueries: [{ query: fetchSongs }],
     })
       .then(() => this.props.history.push('/'))
       .catch((error) => console.error(error))
