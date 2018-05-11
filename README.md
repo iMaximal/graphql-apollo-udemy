@@ -25,5 +25,5 @@ npm install
 ````bash
 npm run dev:server
 npm run start:front
-http://localhost:3000/
 ````
+[http://localhost:3000/](http://localhost:3000/)
